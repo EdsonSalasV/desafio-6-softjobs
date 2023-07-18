@@ -10,7 +10,7 @@ const { checkCredentialsExists, tokenVerification } = require('./middleware')
 
 
 router.get('/', (req, res) => {
-    res.send("Hello World")
+    res.send("server desde react")
 })
 
 router.post('/usuarios', checkCredentialsExists, async (req, res) => {
@@ -32,7 +32,7 @@ router.get('/usuarios', tokenVerification, async (req, res) => {
     } catch (error) {
         res.status(500).send(error.message)
     }
-})
+});
 
 router.post('/login', async (req, res) => {
     try {
